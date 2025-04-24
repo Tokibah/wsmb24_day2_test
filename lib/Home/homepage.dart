@@ -32,13 +32,12 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     getRideData();
-    _applyFilter();
   }
 
   Future<void> getRideData() async {
     rider = await Rider.fetchRider(widget.userId);
     rideCard = await RideCardCreate.createRideCard();
-    _applyFilter();
+    await _applyFilter();
     setState(() {
       notLoading = true;
     });

@@ -136,6 +136,7 @@ class _LogInPageState extends State<LogInPage> {
                             child: Icon(
                               Icons.arrow_circle_right_outlined,
                               size: 40.sp,
+                              color: Colors.white,
                             ),
                           ),
                         ),

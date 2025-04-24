@@ -5,7 +5,7 @@ class Ride {
   final String origin;
   final String destination;
   final String fare;
-  final List<RideRider>? rider;
+  final List<String>? rider;
   final String label;
 
   Ride(
@@ -22,8 +22,7 @@ class Ride {
         origin: map['origin'],
         destination: map['destination'],
         fare: map['fare'],
-        rider: List<RideRider>.from((map['rider'] as List)
-            .map((r) => RideRider(name: r['name'], pre: r['pre']))),
+        rider: map['rider'] != null ? List<String>.from(map['rider']) : null,
         label: map['label']);
   }
 
@@ -33,7 +32,7 @@ class Ride {
       'origin': origin,
       'destination': destination,
       'fare': fare,
-      'rider': rider?.map((r) => {'name': r.name, 'pre': r.pre}).toList(),
+      'rider': rider,
       'label': label,
     };
   }

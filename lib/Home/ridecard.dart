@@ -104,8 +104,9 @@ class _RideCardState extends State<RideCard> {
                               child: Column(children: [
                                 CircleAvatar(
                                     radius: 50,
-                                    backgroundImage: NetworkImage(
-                                        currentRide.driver.image!)),
+                                    backgroundImage: currentRide.driver.image != null
+                                        ? NetworkImage(currentRide.driver.image!)
+                                        : null),
                                 Text(currentRide.driver.name,
                                     style: TextStyle(fontSize: 20.sp)),
                                 Align(
